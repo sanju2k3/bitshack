@@ -1,0 +1,97 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - day
+  - head_symptom
+  - head_whole
+  - head_sides
+  - head_crown
+  - head_eyes
+  - flu_symptom
+  - vision_symptom
+  - stomach_symptom
+  - bot_challenge
+  - back_pain_symptom
+  - fever_symptom
+  - cough_symptom
+  - sore_throat_symptom
+  - fatigue_symptom
+  - skin_rash_symptom
+  - anxiety_symptom
+  - depression_symptom
+  - allergy_symptom
+  - hypertension_symptom
+  - joint_pain_symptom
+  - insomnia_symptom
+  - shortness_of_breath_symptom
+  - nausea_symptom
+  - diarrhea_symptom
+  - migraine_symptom
+  - hearing_loss_symptom
+  - heat_burn_symptom
+  - rash_symptom
+  - book
+
+responses:
+  utter_greet:
+    - text: "Hi! How may I help you? Are you facing any  problems,Say me?..."
+
+  utter_did_that_help:
+  - text: "I hope that this helps you.\n\ If you wish to continue please select any other problem...\n\ Else you can exit"
+  utter_happy:
+  - text: "Great, carry on!"
+  utter_goodbye:
+  - text: "\n\ Bye"
+  utter_day:
+    - text: "Since when are you experiencing the pain?"
+      buttons:
+      - title: More than 24 hrs
+        payload: /day
+      - title: Less than 24 hrs
+        payload: /day
+  utter_stomach_types:
+    - text: "Are you facing any of the following issues: Bloating, Constipation, Gas?"
+      buttons:
+      - title: "Yes"
+        payload: /deny
+      - title: "No"
+        payload: /deny
+  utter_poison_response_stomach:
+    - text: "Following are the remedies for some other causes of Stomach-ache :\n\ Lower Abdomen Pain - 1. Use a heating bag, 2.Reduce your intake of coffee, tea and alcohol as these can make the pain worse. 3.Get plenty of rest."
+      buttons:
+      - title: book now
+        payload: /book
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_link:
+  - text: "Please click this link to book an appointment (http://localhost/technoverse/patient/schedule.php?id=18)."
+  utter_heat_burn_symptom:
+    - text: "Are you experiencing discomfort due to heat exposure? "
+      buttons:
+      - title: "Yes"
+        payload: /deny
+      - title: "No"
+        payload: /deny
+  utter_poison_response:
+  - text: "I'm not a doctor, but if your condition worsens, please seek medical advice."
+    buttons:
+      - title: book now
+        payload: /book
+  utter_heat_burn_remedies:
+  - text: "1. Move to a cooler place. 2. Stay hydrated with water or electrolyte drinks. 3. Use fans or air conditioning to cool down."
+  utter_rash_symptom:
+   - text: "Are you experiencing a rash or skin irritation? "
+     buttons:
+      - title: "Yes"
+        payload: /deny
+      - title: "No"
+        payload: /deny
+  utter_rash_remedies:
+  - text: "1. Avoid scratching the rash. 2. Apply a mild, fragrance-free moisturizer. 3. If it worsens, consult a dermatologist."
+session_expiration_time: 60
+carry_over_slots_to_new_session: true

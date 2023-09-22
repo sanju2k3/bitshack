@@ -1,0 +1,49 @@
+version: "2.0"
+
+stories:
+
+- story: user greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: user bye
+  steps:
+    - action: utter_goodbye
+
+- story: stomach ache 
+  steps: 
+    - intent: stomach_symptom
+    - action: utter_day
+    - intent: day
+    - action: utter_stomach_types
+    - intent: deny
+    - action: utter_poison_response_stomach
+    - intent: book
+    - action: utter_link
+
+
+- story: heat_burn
+  steps:
+    - intent: heat_burn_symptom
+    - action: utter_heat_burn_symptom
+    - intent: deny
+    - action: utter_heat_burn_remedies
+    - action: utter_day
+    - intent: day
+    - action: utter_poison_response
+    - intent: book
+    - action: utter_link
+
+- story: rash
+  steps:
+    - intent: rash_symptom
+    - action: utter_day
+    - intent: day
+    - action: utter_rash_symptom
+    - intent: deny
+    - action: utter_rash_remedies
+    - action: utter_poison_response
+    - intent: book
+    - action: utter_link
+  
